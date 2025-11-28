@@ -56,7 +56,7 @@
                 <li><a href="/trigonometry/">Trigonometry</a></li>
                 <li class="active"><a href="/calculus/">Calculus</a></li>
                 <li><a href="/linear-algebra/">Linear Algebra</a></li>
-                <li><a href="/math-notes/">Notes</a></li>
+                <li><a href="/diff-equations/">Differential Equations</a></li>
               </div>
             </ul>
           </li>
@@ -85,13 +85,32 @@
         <div class="accordion">
 
           <div class="accordion-item">
-            <div class="accordion-header">Reinmann Sum</div>
+            <div class="accordion-header">Epsilon-Delta Definition of a Limit</div>
             <div class="accordion-content active">
-              $$A=\displaystyle \lim_{ n\to \infty}\sum_{i=1}^{n}f(x_{i})\Delta x$$
-              $$where: \Delta x=\frac{b-a}{n}$$
+              $$\lim_{x \to c} f(x)=L\iff \forall\epsilon>0,\exists \delta>0~s.t.~0<|x-c|<\delta\longrightarrow|f(x)-L|<\epsilon$$
             </div>
           </div>
-        
+
+          <div class="accordion-item">
+            <div class="accordion-header">Definition of the Derivative</div>
+            <div class="accordion-content active">
+              $$f'(x)=\lim_{h \to 0} \frac{f(x+h)-f(x)}{h}$$
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">Differentiation Rules</div>
+            <div class="accordion-content active">
+              $$\text{Constant Rule:}~~\frac{d}{dx}c=0$$
+              $$\text{Constant Multiple Rule:}~~\frac{d}{dx}[cf(x)]=cf^{'}(x)$$
+              $$\text{Power Rule:}~~\frac{d}{dx}x^n=nx^{n-1}$$ 
+              $$\text{Sum & Difference Rule:}~~\frac{d}{dx}[f(x)\pm g(x)]=f^{'}(x)\pm g^{'}(x)$$
+              $$\text{Product Rule:}~~\frac{d}{dx}[f(x)g(x)]=f^{'}(x)g(x)+f(x)g^{'}(x)$$
+              $$\text{Quotient Rule:}~~\frac{d}{dx}\left[\frac{f(x)}{g(x)}\right]=\frac{f^{'}(x)g(x)-f(x)g^{'}(x)}{[g(x)]^2}$$
+              $$\text{Chain Rule:}~~\frac{d}{dx}[f(g(x))]=f^{'}(g(x))g^{'}(x)$$
+            </div>
+          </div>
+
           <div class="accordion-item">
             <div class="accordion-header">Power Sums</div>
             <div class="accordion-content active">
@@ -101,16 +120,39 @@
               $$\sum_{i=1}^{n}i^3=\left [ \frac{n(n+1)}{2} \right ]^2$$
             </div>
           </div>
-    
+
+          <div class="accordion-item">
+            <div class="accordion-header">Reinmann Integral</div>
+            <div class="accordion-content active">
+              $$\int_{a}^{b}f(x)dx=\lim_{n\to\infty}\sum_{i=1}^{n}f(x_i^*)\Delta x$$
+              $$\text{where:}~~\Delta x=\frac{b-a}{n}$$
+            </div>
+          </div>
+        
+          <div class="accordion-item">
+            <div class="accordion-header">Fundamental Theorem of Calculus</div>
+            <div class="accordion-content active">
+              $$\text{Part 1:}~~F(x)=\int_{a}^{x}f(t)dt$$
+              $$\text{Part 2:}~\int_{a}^{b}f(x)dx=F(b)-F(a)$$
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">FToC + Chain Rule</div>
+            <div class="accordion-content active">
+              $$\frac{d }{dx}\int_{g(x)}^{h(x)}f(t)dt=f(h(x))h'(x)-f(g(x))g'(x)$$
+            </div>
+          </div>
+
           <div class="accordion-item">
             <div class="accordion-header">Derivatives of Trig Functions</div>
             <div class="accordion-content active">
               $$\frac{\mathrm{d} }{\mathrm{d} x}\sin x=\cos x$$
               $$\frac{\mathrm{d} }{\mathrm{d} x}\cos x=-\sin x$$
               $$\frac{\mathrm{d} }{\mathrm{d} x}\tan x=\sec^2x$$
-              $$\frac{\mathrm{d} }{\mathrm{d} x}\csc x=-\csc x\cot x$$
-              $$\frac{\mathrm{d} }{\mathrm{d} x}\sec x=\sec x\tan x$$
               $$\frac{\mathrm{d} }{\mathrm{d} x}\cot x=-\csc^2x$$
+              $$\frac{\mathrm{d} }{\mathrm{d} x}\sec x=\sec x\tan x$$
+              $$\frac{\mathrm{d} }{\mathrm{d} x}\csc x=-\csc x\cot x$$
             </div>
           </div>
         
@@ -125,11 +167,74 @@
               $$\frac{\mathrm{d} }{\mathrm{d} x}\csc^{-1}x=-\frac{1}{x\sqrt{x^2-1}}$$
             </div>
           </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">Integrals of Trig Functions</div>
+            <div class="accordion-content active">
+              $$\int_{}^{}\sin{x}~dx=-\cos{x}+C$$
+              $$\int_{}^{}\cos{x}~dx=\sin{x}+C$$
+              $$\int_{}^{}\tan{x}~dx=\ln|\sec{x}|+C$$ 
+              $$\int_{}^{}\cot{x}~dx=\ln|\sin{x}|+C$$
+              $$\int_{}^{}\sec{x}~dx=\ln|\sec{x}+\tan{x}|+C$$
+              $$\int_{}^{}\csc{x}~dx=-\ln|\csc{x}+\cot{x}|+C$$
+            </div>
+          </div>
       
           <div class="accordion-item">
             <div class="accordion-header">Integration by Parts</div>
             <div class="accordion-content active">
               $$\int_{}^{}udv=uv-\int_{}^{}vdu$$
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">Arc Length of a Curve</div>
+            <div class="accordion-content active">
+              $$L=\int_{a}^{b}|r^{'}(t)|dt$$
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">Chain Rule for Partial Derivatives</div>
+            <div class="accordion-content active">
+              $$\text{Single Variable Parametric:}~~\frac{\partial z}{\partial t}=\frac{\partial z}{\partial x}\cdot\frac{dx}{dt}+\frac{\partial z}{\partial y}\cdot\frac{dy}{dt}$$
+              $$\text{Multi-Variable Parametric:}~~\frac{\partial z}{\partial s}=\frac{\partial z}{\partial x}\cdot\frac{\partial x}{\partial s}+\frac{\partial z}{\partial y}\cdot\frac{\partial y}{\partial s},~~\frac{\partial z}{\partial t}=\frac{\partial z}{\partial x}\cdot\frac{\partial x}{\partial t}+\frac{\partial z}{\partial y}\cdot\frac{\partial y}{\partial t}$$
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">Surface Area</div>
+            <div class="accordion-content active">
+              $$S=\int_{}^{}\int_{}^{}\sqrt{1+\left(\frac{dz}{dx}\right)^2+\left(\frac{\partial z}{\partial y}\right)^2}dA$$
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">Volume</div>
+            <div class="accordion-content active">
+              $$V=\int_{}^{}\int_{}^{}f(x,y)dA$$
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">Volume Differential</div>
+            <div class="accordion-content active">
+              $$dV=dxdydz=rdrd\theta=\rho^2\sin{\phi}d\rho d\theta d\phi$$
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">Line Integrals</div>
+            <div class="accordion-content active">
+              $$\oint_{}^{}f(x,y)ds=\int_{a}^{b}f(x(t),y(t))|r'(t)|dt$$
+              $$\int_{}^{}F\cdot dr=\int_{a}^{b}F(r(t))\cdot r'(t)dt$$
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">Green's Theorem</div>
+            <div class="accordion-content active">
+              $$\oint_{}^{}F\cdot dr=\oint_{}^{}fdx+gdy=\int_{}^{}\int_{}^{}\left(\frac{\partial g}{\partial x}-\frac{\partial f}{\partial y}\right)dA$$
             </div>
           </div>
 

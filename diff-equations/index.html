@@ -5,7 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       <link rel="icon" type="image/png" href="/favicon.png">
-      <title>Math Notes</title>
+      <title>Differential Equations</title>
       <link rel="stylesheet" href="/style.css">  
     </head>
 
@@ -56,7 +56,7 @@
                 <li><a href="/trigonometry/">Trigonometry</a></li>
                 <li><a href="/calculus/">Calculus</a></li>
                 <li><a href="/linear-algebra/">Linear Algebra</a></li>
-                <li class="active"><a href="/math-notes/">Notes</a></li>
+                <li class="active"><a href="/diff-equations/">Differential Equations</a></li>
               </div>
             </ul>
           </li>
@@ -81,10 +81,111 @@
       </nav>
 
       <main>
-         <div class ="container">
-            <h2>Coming soon</h2>
-            <p></p>
-         </div>
+         <div class="accordion">
+
+          <div class="accordion-item">
+            <div class="accordion-header">Integrating Factor Method</div>
+            <div class="accordion-content active">
+              $$\text{1st order linear ODE:}~~\frac{d }{dx}+p(x)y=f(x)$$
+              $$\mu=e^{\int_{}^{}p(x)dx}$$
+              $$y\mu=\int_{}^{}\mu f(x)dx +c$$
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">Wronskian</div>
+            <div class="accordion-content active">
+              $$W=\left|\begin{matrix}f_1&f_2&\cdots &f_n\\f_1^{'}&f_2^{'}&\cdots&f_n^{'}\\\vdots\\f_1^{(n-1)}&f_2^{(n-1)}&\cdots&f_n^{(n-1)}\end{matrix}\right|$$
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">Reduction of Order Method</div>
+            <div class="accordion-content active">
+              $$\text{2nd order linear homogeneous equation:}~~\frac{d^2y}{dx^2}+P(x)\frac{dy}{dx}+Q(x)y=0$$
+              $$y_2=y_1\int_{}^{}\frac{^{-\int_{}^{}P(x)dx}}{y_1^2}dx$$
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">Characteristic Equation + General Solutions</div>
+            <div class="accordion-content active">
+              $$\text{2nd order linear homogeneous equation with constant coefficients:}~~ay^{''}+by^{'}+cy=0$$
+              $$\text{Characteristic equation:}~~am^2+bm+c=0$$
+              $$\text{Case 1}~(m_1,m_2~\text{are real and unequal}):~~y=c_1e^{m_1x}+c_2e^{m_2x}$$
+              $$\text{Case 2}~(m_1=m_2=m):~~y=c_1e^{mx}+c_2xe^{mx}$$
+              $$\text{Case 3}~(m=\alpha\pm i\beta):~~y=e^{\alpha x}[c_1\cos(\beta x)+c_2\sin(\beta x)]$$
+            </div>
+          </div>
+
+            <div class="accordion-item">
+            <div class="accordion-header">Laplace Transform</div>
+            <div class="accordion-content active">
+              $$\mathscr{L}\{f(t)\}=\int_{0}^{\infty}e^{-st}f(t)dt$$
+              $$\mathscr{L}^{-1}\{F(s)\}=f(t)$$
+            </div>
+
+            <div class="accordion-item">
+            <div class="accordion-header">Laplace Transform of Basic Functions</div>
+            <div class="accordion-content active">
+              $$\mathscr{L}\{1\}=\frac{1}{s}$$
+              $$\mathscr{L}\{t^n\}=\frac{n!}{s^{n+1}}$$
+              $$\mathscr{L}\{e^{at}\}=\frac{1}{s-a}$$
+              $$\mathscr{L}\{\sin kt\}=\frac{k}{s^2+k^2}$$
+              $$\mathscr{L}\{\cos kt\}=\frac{s}{s^2+k^2}$$ 
+            </div>
+
+            <div class="accordion-item">
+            <div class="accordion-header">Inverse Laplace Transform of Basic Functions</div>
+            <div class="accordion-content active">
+              $$\mathscr{L}^{-1}\left\{\frac{1}{s^n}\right\}=\frac{t^{n-1}}{(n-1)!}$$
+              $$\mathscr{L}^{-1}\left\{\frac{1}{s-a}\right\}=e^{at}$$
+              $$\mathscr{L}^{-1}\left\{\frac{1}{s^2+k^2}\right\}=\frac{1}{k}\sin kt$$ 
+              $$\mathscr{L}^{-1}\left\{\frac{s}{s^2+k^2}\right\}=\cos kt$$
+            </div>
+
+            <div class="accordion-item">
+            <div class="accordion-header">Laplace Transform Translation Theorems</div>
+            <div class="accordion-content active">
+              $$\text{First:}~~\mathscr{L}\{e^{at}f(t)\}=F(s-a)=[\mathscr{L}\{f(t)\}]_{s\to(s-a)}$$
+              $$\text{Inverse:}~~\mathscr{L}^{-1}\{F(s-a)\}=\mathscr{L}^{-1}\{[F(s)]_{s\to(s-a)}\}=e^{at}\mathscr{L}^{-1}\{F(s)\}$$
+              $$\text{Second:}~~\mathscr{L}\{f(t)\mathscr{U}(t-a)\}=e^{-as}\mathscr{L}\{f(t+a)\}$$
+              $$\text{Inverse:}~~\mathscr{L}^{-1}\{e^{-as}F(s)\}=f(t-a)\mathscr{U}(t-a)=[\mathscr{L}^{-1}\{F(s)\}]_{t\to(t-a)}\mathscr{U}(t-a)$$
+            </div>
+
+            <div class="accordion-item">
+            <div class="accordion-header">Laplace Transform Differentiation Theorem</div>
+            <div class="accordion-content active">
+              $$\mathscr{L}\{t^nf(t)\}=(-1)^n\frac{d^n}{ds^n}\mathscr{L}\{f(t)\},~~n\in\mathbb{N}$$
+            </div>
+
+            <div class="accordion-item">
+            <div class="accordion-header">Laplace Transform of a Derivative</div>
+            <div class="accordion-content active">
+              $$\mathscr{L}\{f^n(t)\}=s^nF(s)-s^{n-1}f(0)-s^{n-2}f^{'}(0)-\cdots-f^{(n-1)}(0)$$
+            </div>
+
+            <div class="accordion-item">
+            <div class="accordion-header">Convolution Theorem</div>
+            <div class="accordion-content active">
+              $$f*g=\int_{0}^{t}f(\tau)g(t-\tau)d\tau$$
+              $$\mathscr{L}\{f*g\}=\mathscr{L}\{f(t)\}\mathscr{L}\{g(t)\}=F(s)G(s)$$
+            </div>
+
+            <div class="accordion-item">
+            <div class="accordion-header">Cauchy-Euler Equation + General Solutions</div>
+            <div class="accordion-content active">
+              $$a_nx^n\frac{d^ny}{dx^n}+a_{n-1}x^{n-1}\frac{d^{n-1}y}{dx^{n-1}}+\cdots+a_1x\frac{dy}{dx}+a_0y=g(x)$$
+              $$\text{General, 2nd order, homogeneous Cauchy-Euler equation:}~~ax^2y^{''}+bxy^{'}+cy=0$$
+              $$\text{Characteristic equation:}~~am^2+(b-a)m+c=0$$
+              $$\text{Case 1}~(m_1,m_2~\text{are real and unequal}):~~y=c_1x^{m_1}+c_2x^{m_2}$$
+              $$\text{Case 2}~(m_1=m_2=m):~~y=c_1x^m+c_2x^m\ln{x}$$
+              $$\text{Case 3}~(m=\alpha\pm i\beta):~~y=x^\alpha[c_1\cos(\beta\ln{x})+c_2\sin(\beta\ln{x})]$$
+            </div>
+
+          </div>
+
+        </div>
 
         <script src="/index.js"></script>
 
